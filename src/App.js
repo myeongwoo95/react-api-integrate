@@ -1,7 +1,7 @@
 import Users from "./Users";
 
 function App() {
-    return <Users />
+    return <Users />;
 }
 
 export default App;
