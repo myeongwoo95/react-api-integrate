@@ -38,17 +38,14 @@ function useAsync(callback, deps = [], skip = false){
             const data = await callback();
             dispatch({type: "SUCCESS", data});
         } catch(e){
-
             dispatch({type: "ERROR", error: e});
         }
     }
 
     useEffect(() =>{
-        if(skip){
-            return
-        }
-        
+        if (skip) return;
         fetchData();
+        // eslint 설정을 다음 줄에서만 비활성화
         //eslint-disable-next-line
     }, deps)
 
